@@ -20,9 +20,4 @@ jobs:
     needs: test
     steps:
         - uses: actions/checkout@v4
-        - name: Get Allure history
-          uses: actions/download-artifact@v4
-          with:
-            name: allure-results
-            path: allure-results
         - run: allure serve allure-results
