@@ -1,0 +1,18 @@
+package QAcart.Builds;
+
+import com.github.javafaker.Faker;
+import QAcart.Apis.TasksApi;
+import QAcart.Pojos.TaskPojo;
+
+public class TaskBuild {
+    public static TaskPojo CreateNew(){
+        Faker f = new Faker();
+        String item = f.book().title();
+
+        return new TaskPojo(item, false);
+    }
+
+    public static String GetID(TaskPojo taskPojo, String token){
+        return TasksApi.AddTask(taskPojo, token).body().path("_id");
+    }
+}
