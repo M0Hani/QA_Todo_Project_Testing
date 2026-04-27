@@ -12,4 +12,5 @@ jobs:
         with:
           java-version: "25"
           cache: maven
+          distribution: "temurin"
       - run: mvn clean test
