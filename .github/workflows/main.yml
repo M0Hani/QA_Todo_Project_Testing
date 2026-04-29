@@ -14,10 +14,3 @@ jobs:
           cache: maven
           distribution: "temurin"
       - run: mvn clean test
-
-  report:
-    runs-on: windows-latest
-    needs: test
-    steps:
-        - uses: actions/checkout@v4
-        - run: allure serve allure-results
