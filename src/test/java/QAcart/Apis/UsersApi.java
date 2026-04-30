@@ -11,7 +11,7 @@ public class UsersApi {
 
     public static Response Register(UserPojo userPojo){
         return given()
-                .spec(Specs.getRequestSpec())
+                .spec(Specs.getRequestSpecNoAuth())
                 .body(userPojo)
                 .when()
                 .post(Routes.RegisterPath)
@@ -22,7 +22,7 @@ public class UsersApi {
 
     public static Response Login(UserPojo userPojo){
         return given()
-                .spec(Specs.getRequestSpec())
+                .spec(Specs.getRequestSpecNoAuth())
                 .body(userPojo)
                 .when()
                 .post(Routes.LoginPath)

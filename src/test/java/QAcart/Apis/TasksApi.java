@@ -9,9 +9,19 @@ import static io.restassured.RestAssured.given;
 
 public class TasksApi {
     public static Response AddTask(TaskPojo taskPojo, String token){
+        if(token == null)
+        {
+            return given()
+                    .spec(Specs.getRequestSpecNoAuth())
+                    .body(taskPojo)
+                    .when()
+                    .post(Routes.TasksPath)
+                    .then()
+                    .log().all()
+                    .extract().response();
+        }
         return given()
-                .spec(Specs.getRequestSpec())
-                .auth().oauth2(token)
+                .spec(Specs.getRequestSpecAuth(token))
                 .body(taskPojo)
                 .when()
                 .post(Routes.TasksPath)
@@ -19,33 +29,22 @@ public class TasksApi {
                 .log().all()
                 .extract().response();
     }
-    public static Response EditTask(TaskPojo taskPojo, String token, String taskID){
+
+    public static Response GetTasks(String token){
+        if (token == null)
+        {
+            return given()
+                    .spec(Specs.getRequestSpecNoAuth())
+                    .when()
+                    .get(Routes.TasksPath)
+                    .then()
+                    .log().all()
+                    .extract().response();
+        }
         return given()
-                .spec(Specs.getRequestSpec())
-                .auth().oauth2(token)
-                .body(taskPojo)
-                .when()
-                .put(Routes.TasksPath + "/" + taskID)
-                .then()
-                .log().all()
-                .extract().response();
-    }
-    public static Response GetAllTasks(String token){
-        return given()
-                .spec(Specs.getRequestSpec())
-                .auth().oauth2(token)
+                .spec(Specs.getRequestSpecAuth(token))
                 .when()
                 .get(Routes.TasksPath)
-                .then()
-                .log().all()
-                .extract().response();
-    }
-    public static Response GetTask(String token, String taskID){
-        return given()
-                .spec(Specs.getRequestSpec())
-                .auth().oauth2(token)
-                .when()
-                .get(Routes.TasksPath + "/" + taskID)
                 .then()
                 .log().all()
                 .extract().response();
