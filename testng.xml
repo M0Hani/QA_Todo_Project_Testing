@@ -3,7 +3,7 @@
 <suite name="TestSuite">
     <test name="MyTests">
         <packages>
-            <package name="QAcart.TestCases"/>
+            <package name="QAcart.TestSuites"/>
         </packages>
     </test>
 </suite>

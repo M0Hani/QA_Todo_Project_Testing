@@ -1,8 +1,8 @@
-package QAcart.Builds;
+package QAcart.Testing_APIs.Builds;
 
 import com.github.javafaker.Faker;
-import QAcart.Apis.UsersApi;
-import QAcart.Pojos.UserPojo;
+import QAcart.Testing_APIs.Apis.UsersApi;
+import QAcart.Testing_APIs.Pojos.UserPojo;
 
 public class UserBuild {
     public static UserPojo CreateNew(){

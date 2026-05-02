@@ -1,13 +1,13 @@
-package QAcart.TestCases;
+package QAcart.Testing_APIs.TestSuites;
 
-import QAcart.Data.ErrorMsgs;
+import QAcart.Testing_APIs.Data.ErrorMsgs;
 import io.restassured.response.Response;
 import jdk.jfr.Description;
 import org.testng.annotations.Test;
-import QAcart.Apis.UsersApi;
-import QAcart.Builds.UserBuild;
-import QAcart.Pojos.ErrorPojo;
-import QAcart.Pojos.UserPojo;
+import QAcart.Testing_APIs.Apis.UsersApi;
+import QAcart.Testing_APIs.Builds.UserBuild;
+import QAcart.Testing_APIs.Pojos.ErrorPojo;
+import QAcart.Testing_APIs.Pojos.UserPojo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 

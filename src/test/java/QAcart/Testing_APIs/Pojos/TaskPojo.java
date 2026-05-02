@@ -1,4 +1,4 @@
-package QAcart.Pojos;
+package QAcart.Testing_APIs.Pojos;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,8 +1,8 @@
-package QAcart.Builds;
+package QAcart.Testing_APIs.Builds;
 
 import com.github.javafaker.Faker;
-import QAcart.Apis.TasksApi;
-import QAcart.Pojos.TaskPojo;
+import QAcart.Testing_APIs.Apis.TasksApi;
+import QAcart.Testing_APIs.Pojos.TaskPojo;
 
 public class TaskBuild {
     public static TaskPojo CreateNew(){

@@ -1,15 +1,15 @@
-package QAcart.TestCases;
+package QAcart.Testing_APIs.TestSuites;
 
-import QAcart.Data.ErrorMsgs;
-import QAcart.Data.Fillings;
-import QAcart.Pojos.ErrorPojo;
+import QAcart.Testing_APIs.Data.ErrorMsgs;
+import QAcart.Testing_APIs.Data.Fillings;
+import QAcart.Testing_APIs.Pojos.ErrorPojo;
 import io.restassured.response.Response;
 import jdk.jfr.Description;
 import org.testng.annotations.Test;
-import QAcart.Apis.TasksApi;
-import QAcart.Pojos.TaskPojo;
-import QAcart.Builds.TaskBuild;
-import QAcart.Builds.UserBuild;
+import QAcart.Testing_APIs.Apis.TasksApi;
+import QAcart.Testing_APIs.Pojos.TaskPojo;
+import QAcart.Testing_APIs.Builds.TaskBuild;
+import QAcart.Testing_APIs.Builds.UserBuild;
 
 import java.util.List;
 

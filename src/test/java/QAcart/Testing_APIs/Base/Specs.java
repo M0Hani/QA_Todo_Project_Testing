@@ -1,6 +1,6 @@
-package QAcart.Base;
+package QAcart.Testing_APIs.Base;
 
-import QAcart.Data.Routes;
+import QAcart.Testing_APIs.Data.Routes;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 

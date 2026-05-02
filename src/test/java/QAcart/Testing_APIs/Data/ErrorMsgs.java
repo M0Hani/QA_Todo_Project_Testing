@@ -1,4 +1,4 @@
-package QAcart.Data;
+package QAcart.Testing_APIs.Data;
 
 public class ErrorMsgs {
     public static final String EmailAlreadyExists = "Email is already exists in the Database";

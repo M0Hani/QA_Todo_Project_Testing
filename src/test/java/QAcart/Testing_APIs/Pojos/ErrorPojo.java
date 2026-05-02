@@ -1,4 +1,4 @@
-package QAcart.Pojos;
+package QAcart.Testing_APIs.Pojos;
 
 public class ErrorPojo {
     private String message;
