@@ -1,9 +1,9 @@
 package QAcart.Testing_APIs.Apis;
 
 import QAcart.Testing_APIs.Base.Specs;
-import QAcart.Testing_APIs.Data.Routes;
+import QAcart.Shared.Data.Routes;
 import io.restassured.response.Response;
-import QAcart.Testing_APIs.Pojos.UserPojo;
+import QAcart.Shared.Pojos.UserPojo;
 
 import static io.restassured.RestAssured.given;
 

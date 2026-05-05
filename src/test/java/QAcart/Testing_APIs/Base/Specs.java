@@ -1,6 +1,6 @@
 package QAcart.Testing_APIs.Base;
 
-import QAcart.Testing_APIs.Data.Routes;
+import QAcart.Shared.Data.Routes;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
