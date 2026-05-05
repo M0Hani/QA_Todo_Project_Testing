@@ -1,4 +1,4 @@
-name: Run RESTassured TestCases
+name: Run QA-Todo App TestCases
 
 on:
   workflow_dispatch:

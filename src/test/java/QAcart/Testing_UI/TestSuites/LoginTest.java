@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
         BasePage result = loginPage.load().login(userPojo.getEmail(), userPojo.getPassword());
         if(result instanceof HomePage homePage){
             assertTrue(homePage.isWelMesDisplayed());
-            assertTrue(homePage.getWelcomeMessage().contains(userPojo.getFirstName()));
+            assertTrue(homePage.getWelcomeMessage().contains(userPojo.getFirstName().toUpperCase()));
         }
         else throw new RuntimeException("Test failed. Something went wrong with the login process");
     }
@@ -71,4 +71,7 @@ public class LoginTest extends BaseTest {
         if(result instanceof LoginPage) assertThat(loginPage.getHelperText(), equalTo(HelperText.IncorrectEmail));
         else throw new RuntimeException("Test failed. Something went wrong, user shouldn't be able to login");
     }
+
+
+
 }

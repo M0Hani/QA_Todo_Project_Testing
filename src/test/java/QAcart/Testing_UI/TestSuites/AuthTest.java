@@ -35,11 +35,11 @@ public class AuthTest extends BaseTest {
         HomePage homePage = new HomePage(getDriver());
         homePage.load();
         injectCookies(cookies);
-        BasePage result = homePage.load()
-                .logOut()
+        homePage.load();
+        BasePage result = homePage.logOut()
                 .login(userPojo.getEmail(), userPojo.getPassword());
-        if(result instanceof HomePage) assertThat(homePage.item_text(), equalTo(taskPojo.getItem()));
-        else throw new RuntimeException("Test failed. Something went wrong with the login process");
+        if(result instanceof HomePage) { assertThat(homePage.item_text(), equalTo(taskPojo.getItem())); }
+        else { throw new RuntimeException("Test failed. Something went wrong with the login process"); }
     }
 
     @Test
