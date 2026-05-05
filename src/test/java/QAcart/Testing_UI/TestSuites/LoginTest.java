@@ -15,11 +15,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.testng.Assert.*;
 
-import io.restassured.http.Cookie;
 import jdk.jfr.Description;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class LoginTest extends BaseTest {
 
@@ -71,7 +68,5 @@ public class LoginTest extends BaseTest {
         if(result instanceof LoginPage) assertThat(loginPage.getHelperText(), equalTo(HelperText.IncorrectEmail));
         else throw new RuntimeException("Test failed. Something went wrong, user shouldn't be able to login");
     }
-
-
 
 }
