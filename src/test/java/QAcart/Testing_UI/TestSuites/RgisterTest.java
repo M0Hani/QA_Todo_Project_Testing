@@ -29,6 +29,7 @@ public class RgisterTest extends BaseTest {
             assertTrue(homePage.isWelMesDisplayed());
             assertTrue(homePage.EmptyTodos());
             assertTrue(homePage.getWelcomeMessage().contains(userPojo.getFirstName().toUpperCase()));
+            homePage.logOut();
         }
         else throw new RuntimeException("Test failed. Something went wrong during the register process");
     }

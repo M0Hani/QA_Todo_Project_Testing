@@ -1,1 +1,0 @@
-{"uuid":"72a52fd0-c71a-4c0e-b15a-5d8dc28e959b","name":"QA_Todo_Project_Testing","children":["33aa831b-5c63-42ad-9c06-d474c16b2053"],"befores":[{"name":"initialize","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1777853179679,"stop":1777853184217}],"afters":[],"start":1777853179368,"stop":1777853190460}

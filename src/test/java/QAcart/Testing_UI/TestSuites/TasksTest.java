@@ -37,7 +37,10 @@ public class TasksTest extends BaseTest {
         NewTaskPage newTaskPage = homePage.load().AddItem();
         TaskPojo taskPojo = TaskBuild.CreateNew();
         BasePage result = newTaskPage.fillItem(taskPojo.getItem());
-        if(result instanceof HomePage) assertThat(homePage.item_text(), equalTo(taskPojo.getItem()));
+        if(result instanceof HomePage){
+            assertThat(homePage.item_text(), equalTo(taskPojo.getItem()));
+            homePage.logOut();
+        }
         else throw new RuntimeException("Test failed. Task wasn't added successfully");
     }
 
@@ -51,7 +54,10 @@ public class TasksTest extends BaseTest {
         injectCookies(cookies);
         NewTaskPage newTaskPage = homePage.load().AddItem();
         BasePage result = newTaskPage.load().fillItem(Fillings.EmptyText);
-        if(result instanceof NewTaskPage) assertThat(newTaskPage.getHelperText(), equalTo(HelperText.TaskNameRequired));
+        if(result instanceof NewTaskPage) {
+            assertThat(newTaskPage.getHelperText(), equalTo(HelperText.TaskNameRequired));
+            newTaskPage.logOut();
+        }
         else throw new RuntimeException("Test failed. Task should be rejected");
     }
 
@@ -66,7 +72,10 @@ public class TasksTest extends BaseTest {
         NewTaskPage newTaskPage = homePage.load().AddItem();
         BasePage result = newTaskPage.load().fillItem(Fillings.WhiteSpaces);
         if(result instanceof NewTaskPage) assertThat(newTaskPage.getHelperText(), equalTo(HelperText.TaskNameRequired));
-        else throw new RuntimeException("Test failed. Task should be rejected and treated as empty");
+        else {
+            homePage.logOut();
+            throw new RuntimeException("Test failed. Task should be rejected and treated as empty");
+        }
     }
 
     @Test
@@ -85,6 +94,7 @@ public class TasksTest extends BaseTest {
         injectCookies(cookies);
         homePage.load();
         assertTrue(homePage.pagingIsDisplayed());
+        homePage.logOut();
     }
 
     @Test
@@ -101,6 +111,7 @@ public class TasksTest extends BaseTest {
         injectCookies(cookies);
         homePage.load().DeleteItem();
         assertTrue(homePage.EmptyTodos());
+        homePage.logOut();
     }
 
     @Test
@@ -118,5 +129,6 @@ public class TasksTest extends BaseTest {
         homePage.load().CheckTask();
         homePage.load(); //Task is checked but have to reload the page to be read in the client side
         assertTrue(homePage.isTaskChecked());
+        homePage.logOut();
     }
 }

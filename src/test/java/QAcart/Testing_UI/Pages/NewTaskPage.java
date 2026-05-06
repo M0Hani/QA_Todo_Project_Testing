@@ -21,6 +21,8 @@ public class NewTaskPage extends BasePage {
     WebElement submitItem;
     @FindBy(xpath = "//*[@id=\"root\"]/div[2]/div/div/div/p")
     WebElement helperText;
+    @FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/div/button")
+    private WebElement LogOut;
 
     public NewTaskPage load(){
         driver.get(Routes.BaseURL + Routes.NewTaskPage);
@@ -42,4 +44,9 @@ public class NewTaskPage extends BasePage {
     }
 
     public String getHelperText(){ return helperText.getText(); }
+
+    public LoginPage logOut(){
+        LogOut.click();
+        return new LoginPage(driver);
+    }
 }

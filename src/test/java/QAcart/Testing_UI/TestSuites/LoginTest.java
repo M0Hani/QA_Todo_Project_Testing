@@ -30,6 +30,7 @@ public class LoginTest extends BaseTest {
         if(result instanceof HomePage homePage){
             assertTrue(homePage.isWelMesDisplayed());
             assertTrue(homePage.getWelcomeMessage().contains(userPojo.getFirstName().toUpperCase()));
+            homePage.logOut();
         }
         else throw new RuntimeException("Test failed. Something went wrong with the login process");
     }

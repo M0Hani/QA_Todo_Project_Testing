@@ -38,7 +38,10 @@ public class AuthTest extends BaseTest {
         homePage.load();
         BasePage result = homePage.logOut()
                 .login(userPojo.getEmail(), userPojo.getPassword());
-        if(result instanceof HomePage) { assertThat(homePage.item_text(), equalTo(taskPojo.getItem())); }
+        if(result instanceof HomePage) {
+            assertThat(homePage.item_text(), equalTo(taskPojo.getItem()));
+            homePage.logOut();
+        }
         else { throw new RuntimeException("Test failed. Something went wrong with the login process"); }
     }
 
@@ -67,6 +70,7 @@ public class AuthTest extends BaseTest {
         injectCookies(cookies);
         homePage.load();
         assertTrue(homePage.EmptyTodos());
+        homePage.logOut();
     }
 
     @Test
@@ -87,7 +91,8 @@ public class AuthTest extends BaseTest {
         HomePage homePage = new HomePage(getDriver());
         homePage.load();
         injectCookies(cookies);
-        homePage.load().logOut();
+        homePage.load();
+        homePage.logOut();
         homePage.load();
         String url = getDriver().getCurrentUrl();
         assertThat(url, equalTo(Routes.BaseURL + Routes.LoginPage));
